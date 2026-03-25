@@ -10,6 +10,6 @@ jobs:
       - name: Deploy Frontend to Azure App Service
         uses: azure/webapps-deploy@v2
         with:
-          app-name: "TOTES_FRONTEND_APP_SERVICE"
+          app-name: "TOTES-FRONTEND-APP-SERVICE"
           publish-profile: ${{ secrets.AZURE_FRONTEND_PUBLISH_PROFILE }}
           images: "asliadarsh/todo-frontend:latest"
