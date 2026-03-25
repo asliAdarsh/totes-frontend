@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <div className="app-container">
         <header className="header">
-          <h1>Task & Notes Master</h1>
+          <h1>Totes: Task & Notes Master</h1>
           <p>A beautiful way to manage your life.</p>
         </header>
 
