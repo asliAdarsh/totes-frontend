@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-//const API_URL = "https://totes-backend-app-service-epddbyg7hmagfvc4.centralindia-01.azurewebsites.net";
-const API_URL = "http://localhost:8000";
+const API_URL = "https://totes-backend-app-service-epddbyg7hmagfvc4.canadacentral-01.azurewebsites.net";
 
 
 export const api = axios.create({
