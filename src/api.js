@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_FASTAPI_URL;
+const API_URL = "https://totes-backend-app-service-epddbyg7hmagfvc4.centralindia-01.azurewebsites.net";
 
 
 export const api = axios.create({
