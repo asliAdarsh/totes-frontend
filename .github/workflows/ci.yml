@@ -10,15 +10,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Login to Docker Hub
+        run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Build & Push Frontend Image
         run: |
-          # Login to Docker Hub
-          echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-          
+          # The --build-arg is the bridge between GitHub Secrets and your Dockerfile
+          docker build \
+            --build-arg VITE_API_URL="${{ secrets.VITE_API_URL }}" \
+            -t asliadarsh/todo-frontend:${{ github.sha }} \
+            -t asliadarsh/todo-frontend:latest \
+            .
 
-          docker build -t asliadarsh/todo-frontend:${{ github.sha }} .
-
-          
+          # Push both the unique SHA tag and the 'latest' tag
           docker push asliadarsh/todo-frontend:${{ github.sha }}
+          docker push asliadarsh/todo-frontend:latest
