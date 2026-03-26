@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Vite looks for variables starting with VITE_
 // In Azure App Service (Frontend), add VITE_API_URL in Environment Variables
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "totes-backend-app-service-epddbyg7hmagfvc4.canadacentral-01.azurewebsites.net";
 
 export const api = axios.create({
     baseURL: API_URL,
