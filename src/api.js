@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = "https://totes-backend-app-service-epddbyg7hmagfvc4.centralindia-01.azurewebsites.net";
+//const API_URL = "https://totes-backend-app-service-epddbyg7hmagfvc4.centralindia-01.azurewebsites.net";
+const API_URL = "https://totes-backend-app-service-epddbyg7hmagfvc4.canadacentral-01.azurewebsites.net"; // Uncomment this if you want to use the 'canadacentral' URL instead
 
 
 export const api = axios.create({
