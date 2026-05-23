@@ -21,9 +21,9 @@ jobs:
           # We pull the secret from GitHub and pass it to the Docker build argument
           docker build \
             --build-arg VITE_API_URL="${{ secrets.VITE_API_URL }}" \
-            -t asliadarsh/todo-frontend:${{ github.sha }} \
-            -t asliadarsh/todo-frontend:latest \
+            -t asliadarsh/totes-frontend:${{ github.sha }} \
+            -t asliadarsh/totes-frontend:latest \
             .
 
-          docker push asliadarsh/todo-frontend:${{ github.sha }}
-          docker push asliadarsh/todo-frontend:latest
+          docker push asliadarsh/totes-frontend:${{ github.sha }}
+          docker push asliadarsh/totes-frontend:latest
